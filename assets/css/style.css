@@ -643,6 +643,37 @@ img { max-width: 100%; display: block; }
 
 .footer-inner p { margin: 0; }
 
+.footer-legal {
+  color: rgba(255,255,255,0.75);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-legal:hover { color: var(--white); }
+
+/* Legal page */
+.legal-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.legal-content h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 0.6em;
+}
+
+.legal-content h2 {
+  font-size: 1.15rem;
+  margin-top: 2em;
+}
+
+.legal-content p,
+.legal-content li { color: var(--text); }
+
+.legal-content .check-list { margin: 1em 0; }
+
+.legal-content a { color: var(--copper); text-decoration: underline; }
+
 /* Responsive */
 @media (max-width: 880px) {
   .structure-grid,
