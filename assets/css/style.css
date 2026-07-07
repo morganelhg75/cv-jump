@@ -162,13 +162,26 @@ img { max-width: 100%; display: block; }
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  display: block;
+}
+
+.logo-text {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--green-deep);
 }
 
-.logo span { color: var(--tan); }
+.logo-text span { color: var(--tan); }
 
 .main-nav {
   display: flex;
@@ -526,28 +539,12 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 
-.stages-photo-placeholder {
+.stages-photo {
+  width: 100%;
   aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: var(--radius);
-  background: repeating-linear-gradient(135deg, #2c4230, #2c4230 18px, #33502f 18px, #33502f 36px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: var(--white);
   box-shadow: var(--shadow);
-  border: 2px dashed rgba(255,255,255,0.4);
-}
-
-.stages-photo-placeholder span { font-size: 2.6rem; }
-
-.stages-photo-placeholder p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.85);
-  text-align: center;
-  padding: 0 24px;
 }
 
 .stages-text .check-list { margin: 20px 0 28px; }
@@ -564,29 +561,49 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 4 / 3;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+
+/* Real photos */
+.gallery-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-photo figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px 16px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: linear-gradient(to top, rgba(20,26,20,0.75), transparent);
+}
+
+/* Placeholder tiles (awaiting real photos) */
+.gallery-4, .gallery-5, .gallery-6 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
   border: 2px dashed rgba(255,255,255,0.35);
 }
 
 .gallery-icon { font-size: 2.2rem; }
 
-.gallery-item figcaption {
+.gallery-4 figcaption, .gallery-5 figcaption, .gallery-6 figcaption {
   font-size: 0.82rem;
   font-weight: 600;
   text-align: center;
   padding: 0 16px;
 }
 
-.gallery-1 { background: linear-gradient(145deg, #2c4230, #1b2a20); }
-.gallery-2 { background: linear-gradient(145deg, #4a3222, #2e2013); }
-.gallery-3 { background: linear-gradient(145deg, #3c5a41, #223327); }
 .gallery-4 { background: linear-gradient(145deg, #b78e46, #8a6a30); }
 .gallery-5 { background: linear-gradient(145deg, #223327, #3c5a41); }
 .gallery-6 { background: linear-gradient(145deg, #8a6a30, #4a3222); }
