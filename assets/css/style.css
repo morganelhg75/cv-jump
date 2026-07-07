@@ -129,6 +129,21 @@ img { max-width: 100%; display: block; }
   transform: translateY(-2px);
 }
 
+.btn-outline-dark {
+  border-color: var(--green-deep);
+  color: var(--green-deep);
+}
+
+.btn-outline-dark:hover {
+  background: rgba(34, 51, 39, 0.08);
+}
+
+.contact-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
 /* Header */
 .site-header {
   position: sticky;
@@ -455,6 +470,127 @@ img { max-width: 100%; display: block; }
   border: 0;
 }
 
+/* Announcement bar */
+.announce-bar {
+  background: var(--tan);
+  color: var(--green-deep);
+}
+
+.announce-bar p {
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Prestations */
+.prestations-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.prestation-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prestation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.prestation-icon {
+  font-size: 1.8rem;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.prestation-card h3 { font-size: 1.02rem; margin-bottom: 0.4em; }
+
+.prestation-card p { color: var(--text-light); font-size: 0.88rem; margin: 0; }
+
+/* Stages */
+.stages { background: var(--cream-dark); }
+
+.stages-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.stages-photo-placeholder {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  background: repeating-linear-gradient(135deg, #2c4230, #2c4230 18px, #33502f 18px, #33502f 36px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--white);
+  box-shadow: var(--shadow);
+  border: 2px dashed rgba(255,255,255,0.4);
+}
+
+.stages-photo-placeholder span { font-size: 2.6rem; }
+
+.stages-photo-placeholder p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 0 24px;
+}
+
+.stages-text .check-list { margin: 20px 0 28px; }
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  border: 2px dashed rgba(255,255,255,0.35);
+}
+
+.gallery-icon { font-size: 2.2rem; }
+
+.gallery-item figcaption {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.gallery-1 { background: linear-gradient(145deg, #2c4230, #1b2a20); }
+.gallery-2 { background: linear-gradient(145deg, #4a3222, #2e2013); }
+.gallery-3 { background: linear-gradient(145deg, #3c5a41, #223327); }
+.gallery-4 { background: linear-gradient(145deg, #b78e46, #8a6a30); }
+.gallery-5 { background: linear-gradient(145deg, #223327, #3c5a41); }
+.gallery-6 { background: linear-gradient(145deg, #8a6a30, #4a3222); }
+
 /* Footer */
 .site-footer {
   background: var(--green-deep);
@@ -475,9 +611,12 @@ img { max-width: 100%; display: block; }
 /* Responsive */
 @media (max-width: 880px) {
   .structure-grid,
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid,
+  .stages-grid { grid-template-columns: 1fr; }
 
-  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid,
+  .prestations-grid,
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 
   .inclus-grid,
   .infos-grid { grid-template-columns: 1fr; }
@@ -488,7 +627,9 @@ img { max-width: 100%; display: block; }
 @media (max-width: 640px) {
   .section { padding: 64px 0; }
 
-  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-grid,
+  .prestations-grid,
+  .gallery-grid { grid-template-columns: 1fr; }
 
   .nav-toggle { display: flex; }
 
